@@ -123,12 +123,12 @@ var seconds = 30
 
 while seconds >= 0 {
     if seconds == 0 {
-        print("                                  🚀")
-        print("                                🔥")
-        print("                              💨")
-        print("                            💨")
-        print("                          💨")
-        print("                        💨")
+        print("            🚀")
+        print("          🔥")
+        print("        💨")
+        print("      💨")
+        print("    💨")
+        print("  💨")
     } else {
         print("countdown \(seconds)....")
            // while condition NEEDS a way to stop the loop
@@ -137,4 +137,61 @@ while seconds >= 0 {
    
     // without decrementing seconds the while loop will be ub what's known as an (infinete loop)
     seconds -= 1 // decrementing seconds by 1
+}
+
+
+//=====================================================
+//                repeat-while loop
+//=====================================================
+
+var isPlaying = false
+var currentLevel = 1
+var finalLevel = 10
+
+repeat {
+    // code here
+    //  using String interpolation to show current level
+    if isPlaying {
+        print("playing level \(currentLevel)")
+        if currentLevel == finalLevel {
+            print("I will definetely recommend this game.")
+            isPlaying = false // stops the game
+        }
+        currentLevel += 1
+    } else {
+        // player is seeing our game for the first time
+        print("Trying out Pursuit Arcade for the first time.")
+        isPlaying = true
+    }
+} while isPlaying == true
+
+
+//=====================================================
+//                  nested loops
+//=====================================================
+
+
+for i in 1...5 { // outer for loop - executes 5 times
+    // first time it enters the for loop i is 1
+    for j in 1...5 { // inner for loop - executes 5 time
+        print("\(i) * \(j) is \(i * j)")
+    }
+}
+
+
+//=====================================================
+//                  labels in loops
+//=====================================================
+
+let product = 50 // product is the multiplication of two values e.g 4 * 5 = 20
+
+outerloop: for i in 1...10 {
+    innerloop: for j in 1...10 {
+        if i * j == product {
+            print("product was found by multiplying \(i) * \(j)")
+            break outerloop
+        } else {
+            print("keep searching.....")
+        }
+    }
 }
