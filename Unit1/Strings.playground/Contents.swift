@@ -67,3 +67,45 @@ let endIndex = programmingLanguage.endIndex
 let lastCharacterIndex = programmingLanguage.index(before: endIndex)
 let lastCharacter = programmingLanguage[lastCharacterIndex]
 print("last character in \(programmingLanguage) is \(lastCharacter)")
+
+
+//=======================================================
+//             making a range using indices
+//=======================================================
+
+let alphabets = "abcdefghijklmnopqrstuvwxyz"
+
+// using a for loop print out the first 6 characters in the alphabet
+var counter = 0
+for char in alphabets {
+    if counter < 6 {
+        print(char)
+        counter += 1
+    } else { break }
+}
+print("for loop has ended")
+
+//using a for-loop and enumerated() print the first six alphabets
+
+for (index, alphabet) in alphabets.enumerated() {
+    if index < 6 {
+        print("\(alphabet) at index \(index)")
+    } else { break }
+}
+
+let alphabetsStartIndex = alphabets.startIndex
+
+
+//=======================================================
+//                 multi-line Strings
+//=======================================================
+
+
+let multilineString = """
+Hello
+Hello
+Hello
+"""
+
+print(multilineString)
+
